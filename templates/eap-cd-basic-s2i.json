@@ -70,6 +70,13 @@
             "required": false
         },
         {
+            "displayName": "Enable ExampleDS datasource",
+            "description": "Enable ExampleDS datasource.",
+            "name": "ENABLE_GENERATE_DEFAULT_DATASOURCE",
+            "value": "true",
+            "required": false
+        },
+        {
             "displayName": "AMQ cluster password",
             "description": "AMQ cluster admin password",
             "name": "MQ_CLUSTER_PASSWORD",
@@ -502,6 +509,10 @@
                                     {
                                         "name": "AUTO_DEPLOY_EXPLODED",
                                         "value": "${AUTO_DEPLOY_EXPLODED}"
+                                    },
+                                    {
+                                        "name": "ENABLE_GENERATE_DEFAULT_DATASOURCE",
+                                        "value": "${ENABLE_GENERATE_DEFAULT_DATASOURCE}"
                                     }
                                 ]
                             }
