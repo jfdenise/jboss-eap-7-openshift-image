@@ -1,7 +1,7 @@
 schema_version: 1
 
 name: "jboss-eap-7-tech-preview/eap-cd-openshift-rhel8"
-version: "18.0"
+version: "19.0"
 
 modules:
       repositories:
@@ -11,21 +11,21 @@ modules:
                   ref: master
           - name: jboss-eap-modules
             git:
-                  url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: master
+                  url: https://github.com/jfdenise/jboss-eap-modules.git
+                  ref: CD19
           - name: jboss-eap-7-image
             git:
-                  url: https://github.com/jboss-container-images/jboss-eap-7-image.git
-                  ref: eap-cd-dev
+                  url: https://github.com/jfdenise/jboss-eap-7-image.git
+                  ref: CD19
           - name: wildfly-cekit-modules
             git:
-                  url: https://github.com/wildfly/wildfly-cekit-modules.git
-                  ref: master
+                  url: https://github.com/jfdenise/wildfly-cekit-modules.git
+                  ref: CD19
 
 artifacts:
   - name: maven-repo
     target: maven-repo.zip
-    md5: b196001c8e08e480bd3b01970f73aa0c
+    md5: 4b9635a42d81f49d73187b83c6626ac1
 
 osbs:
       repository:
