@@ -1,8 +1,8 @@
 schema_version: 1
 
-name: "jboss-eap-7/eap73-openjdk11-openshift-rhel8"
+name: "jboss-eap-7/eapxp-openjdk11-openshift-rhel8"
 description: "Red Hat JBoss Enterprise Application Platform 7.3 OpenShift container image."
-version: "7.3.0"
+version: "1.0"
 from: "ubi8:8-released"
 labels:
     - name: "com.redhat.component"
@@ -35,22 +35,23 @@ modules:
                   ref: 0.39.0
           - name: jboss-eap-modules
             git:
-                  url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: EAP_730_CR4
+                  url: https://github.com/jfdenise/jboss-eap-modules.git
+                  ref: MPXP_1.0
           - name: jboss-eap-7-image
             git:
-                  url: https://github.com/jboss-container-images/jboss-eap-7-image.git
-                  ref: EAP_730_CR4
+                  url: https://github.com/jfdenise/jboss-eap-7-image.git
+                  ref: 7.3.1_and_MPXP
           - name: wildfly-cekit-modules
             git:
-                  url: https://github.com/wildfly/wildfly-cekit-modules.git
-                  ref: 0.18.2
+                  url: https://github.com/jfdenise/wildfly-cekit-modules.git
+                  ref: 7.3.1_and_MPXP
       install:
           - name: jboss.container.openjdk.jdk
             version: "11"
           - name: jboss.container.maven.35.bash
             version: "3.5"
-          - name: eap-73-env-latest
+          - name: eap-73-env
+            version: "MPXP_1.0"
           - name: jboss.container.eap.setup
           - name: eap-install-cleanup
           # This one indirectly installs common logging by creating a link to $BIN_HOME/bin/launch
@@ -91,7 +92,6 @@ modules:
           - name: jboss.container.wildfly.galleon.fp-content.keycloak
           - name: jboss.container.wildfly.galleon.fp-content.jolokia
           - name: jboss.container.wildfly.galleon.fp-content.java
-          - name: jboss.container.wildfly.galleon.fp-content.base-layers
           - name: jboss.container.wildfly.galleon.fp-content.mvn
           - name: jboss.container.wildfly.galleon.fp-content.ejb-tx-recovery
           - name: os-eap-probes
@@ -119,7 +119,7 @@ modules:
 artifacts:
   - name: maven-repo
     target: maven-repo.zip
-    md5: a3a1eaf2ac6572520639c48bd2b91f54
+    path: /home/jdenise/workspaces/jboss-eap7-brian/dist/maven-repo.zip
 
 run:
       user: 185
