@@ -36,7 +36,7 @@ modules:
           - name: jboss-eap-modules
             git:
                   url: https://github.com/jfdenise/jboss-eap-modules.git
-                  ref: MPXP_1.0
+                  ref: 7.3.1_MP_XP_1.0
           - name: jboss-eap-7-image
             git:
                   url: https://github.com/jfdenise/jboss-eap-7-image.git
@@ -60,6 +60,7 @@ modules:
           - name: dynamic-resources
           - name: jboss.container.eap.s2i.galleon
           - name: jboss.container.eap.galleon
+          - name: jboss.container.eap.galleon.config.mp
           - name: jboss.container.eap.galleon.build-settings
             version: "public"
           - name: jboss.container.eap.openshift.modules
