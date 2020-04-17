@@ -1,12 +1,12 @@
 schema_version: 1
 
-name: "jboss-eap-7/eap-xp10-openjdk11-openshift-rhel8"
+name: "jboss-eap-7/eap-xp1-openjdk11-openshift-rhel8"
 description: "Red Hat JBoss Enterprise Application Platform XP 1.0 OpenShift container image."
 version: "1.0"
 from: "ubi8:8-released"
 labels:
     - name: "com.redhat.component"
-      value: "jboss-eap-7-xp10-openjdk11-openshift-rhel8-container"
+      value: "jboss-eap-7-xp1-openjdk11-openshift-rhel8-container"
     - name: "io.k8s.description"
       value: "Platform for building and running JavaEE applications on JBoss EAP XP 1.0"
     - name: "io.k8s.display-name"
@@ -39,8 +39,8 @@ modules:
                   ref: EAP_731_DEV1
           - name: jboss-eap-7-image
             git:
-                  url: https://github.com/jboss-container-images/jboss-eap-7-image.git
-                  ref: EAP_731_DEV2
+                  url: https://github.com/luck3y/jboss-eap-7-image.git
+                  ref: CLOUD-3536
           - name: wildfly-cekit-modules
             git:
                   url: https://github.com/wildfly/wildfly-cekit-modules.git
@@ -131,4 +131,4 @@ osbs:
             container_file: container.yaml
       repository:
             name: containers/jboss-eap-7
-            branch: jb-eap-7.3-xp10-openjdk-11-openshift-dev-rhel-8
+            branch: jb-eap-7.3-xp1-openjdk-11-openshift-dev-rhel-8

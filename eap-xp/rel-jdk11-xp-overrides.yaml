@@ -14,4 +14,4 @@ packages:
 osbs:
       repository:
             name: containers/jboss-eap-7
-            branch: jb-eap-7.3-xp10-openjdk-11-openshift-cp-rhel-8
+            branch: jb-eap-7.3-xp1-openjdk-11-openshift-cp-rhel-8
