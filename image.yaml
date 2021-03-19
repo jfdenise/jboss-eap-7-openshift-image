@@ -1,16 +1,16 @@
 schema_version: 1
 
 name: "jboss-eap-7-tech-preview/eap74-openjdk11-openshift-rhel8"
-description: "Red Hat JBoss Enterprise Application Platform 7.4.0.Beta OpenShift container image."
-version: "7.4.0.Beta"
+description: "Red Hat JBoss Enterprise Application Platform 7.4.0 OpenShift container image."
+version: "7.4.0"
 from: "registry.redhat.io/ubi8/ubi:latest"
 labels:
     - name: "com.redhat.component"
-      value: "jboss-eap-74-beta-openjdk11-builder-openshift-rhel8-container"
+      value: "jboss-eap-74-ga-openjdk11-builder-openshift-rhel8-container"
     - name: "io.k8s.description"
-      value: "Platform for building and running JavaEE applications on JBoss EAP 7.4.0.Beta"
+      value: "Platform for building and running JavaEE applications on JBoss EAP 7.4.0"
     - name: "io.k8s.display-name"
-      value: "JBoss EAP 7.4.0.Beta"
+      value: "JBoss EAP 7.4.0"
     - name: "io.openshift.expose-services"
       value: "8080:http"
     - name: "io.openshift.tags"
@@ -35,22 +35,22 @@ modules:
                   ref: 0.44.0
           - name: jboss-eap-modules
             git:
-                  url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: EAP_740_BETA_CR1
+                  url: https://github.com/jfdenise/jboss-eap-modules.git
+                  ref: CLOUD-3928
           - name: jboss-eap-7-image
             git:
-                  url: https://github.com/jboss-container-images/jboss-eap-7-image.git
-                  ref: EAP_740_BETA_CR1
+                  url: https://github.com/jfdenise/jboss-eap-7-image.git
+                  ref: CLOUD-3928
           - name: wildfly-cekit-modules
             git:
-                  url: https://github.com/wildfly/wildfly-cekit-modules.git
-                  ref: 0.22.1
+                  url: https://github.com/jfdenise/wildfly-cekit-modules.git
+                  ref: CLOUD-3928
       install:
           - name: jboss.container.openjdk.jdk
             version: "11"
           - name: jboss.container.maven
             version: "8.0.3.5"
-          - name: eap-74-beta-galleon-latest
+          - name: eap-74-galleon-latest
           - name: jboss.container.eap.setup
           - name: eap-install-cleanup
           # This one indirectly installs common logging by creating a link to $BIN_HOME/bin/launch
@@ -120,7 +120,7 @@ modules:
 artifacts:
   - name: maven-repo
     target: maven-repo.zip
-    md5: 0bd3021cf60bb3898fea8dd3ae56c15f
+    path: /home/jdenise/workspaces/eap-xp-s2i/7.4/jboss-eap-7.4.0.GA-redhat-20210318v2-image-builder-maven-repository.zip
 
 run:
       user: 185
