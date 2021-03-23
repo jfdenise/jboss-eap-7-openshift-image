@@ -120,7 +120,7 @@ modules:
 artifacts:
   - name: maven-repo
     target: maven-repo.zip
-    path: /home/jdenise/workspaces/eap-xp-s2i/7.4/jboss-eap-7.4.0.GA-redhat-20210318v2-image-builder-maven-repository.zip
+    path: /home/jdenise/workspaces/eap-xp-s2i/7.4/jboss-eap-7.4.0.GA-redhat-20210323-image-builder-maven-repository.zip
 
 run:
       user: 185
