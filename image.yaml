@@ -36,7 +36,7 @@ modules:
           - name: jboss-eap-modules
             git:
                   url: https://github.com/jfdenise/jboss-eap-modules.git
-                  ref: CLOUD-3928
+                  ref: CLOUD_3928
           - name: jboss-eap-7-image
             git:
                   url: https://github.com/jfdenise/jboss-eap-7-image.git
