@@ -49,7 +49,7 @@ modules:
           - name: jboss.container.openjdk.jdk
             version: "11"
           - name: jboss.container.maven
-            version: "8.0.3.5"
+            version: "8.0.3.6"
           - name: eap-xp-30-env
             version: "1.0.0"
           - name: jboss.container.eap.setup
