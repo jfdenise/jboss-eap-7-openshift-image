@@ -60,7 +60,6 @@ modules:
           - name: dynamic-resources
           - name: jboss.container.eap.s2i.galleon
           - name: jboss.container.eap.galleon
-          - name: jboss.container.eap.galleon.config.mp
           - name: jboss.container.eap.galleon.build-settings
             version: "public"
           - name: jboss.container.eap.openshift.modules
@@ -69,6 +68,8 @@ modules:
           - name: jboss.container.eap.amq6
           - name: jboss.container.java.jvm.bash
           - name: jboss.container.eap.launch
+          # This module must be after jboss.container.eap.launch, it overrides launch-config to contain mp scripts.
+          - name: jboss.container.eap.galleon.config.mp
           - name: jboss.container.wildfly.launch.admin
           - name: jboss.container.wildfly.launch.access-log-valve
           - name: jboss.container.wildfly.launch-config.config
