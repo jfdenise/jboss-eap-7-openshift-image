@@ -28,7 +28,7 @@ Scenario: check datasource with specified value used for default-job-repository 
        | DEFAULT_JOB_REPOSITORY    | test-mysql                   |
    Then run script -c /opt/eap/bin/openshift-launch.sh /tmp/boot.log in container and detach
    And XML file /opt/eap/standalone/configuration/standalone-openshift.xml should contain value test_mysql-TEST on XPath //*[local-name()='xa-datasource']/@pool-name
-   And file /tmp/boot.log should contain ERROR You have set the DEFAULT_JOB_REPOSITORY environment variables to configure a default-job-repository pointing to the 'test-mysql' datasource. Fix your configuration to contain a batch-jberet subsystem for this to happen.
+   And file /tmp/boot.log should contain You have set the DEFAULT_JOB_REPOSITORY environment variables to configure a default-job-repository pointing to the 'test-mysql' datasource. Fix your configuration to contain a batch-jberet subsystem for this to happen.
 
 Scenario: check datasource with default value used for timer-service-datastore does not give error when no ejb3 subsystem
     When container is started with command bash
